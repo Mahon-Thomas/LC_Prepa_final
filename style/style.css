@@ -1,0 +1,941 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent
+}
+body{
+  
+    line-height:1;
+    font-family: arial;
+}
+h1{
+    text-align: center;
+    padding: 15px;
+    color: black;
+    font-size: 25px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+h3 { 
+
+  text-align: center;
+  color:black;
+  font-size: 200%; 
+  font-weight: bold;
+  padding: 15px;
+}
+
+h4{
+    font-size: 16px;
+
+}
+
+.image
+    {
+
+    text-align: center;
+    
+    background-image:url(../img/calandre.jpg);
+}
+
+.formtxt a{
+  padding-bottom: 10px;
+  
+  font-size: 16px;
+  color: #000;
+  
+}
+
+.formtxt p{
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.formtxt h4{
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.formtxt li {
+  list-style-type: disc;
+  margin-left: 15px;
+  padding-bottom: 3px;
+  font-size: 16px;
+
+}
+
+
+.formtxt {
+  height: 100%;
+  padding: 3%;
+  padding-bottom: 30%;
+}
+
+.formtxt img{
+  width: 20px;
+  height: 20px;
+  max-width: 100%;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+    display:block
+}
+nav ul {
+    list-style:none
+}
+blockquote,q{
+    quotes:none
+}
+blockquote:before,blockquote:after,q:before,q:after{
+    content:none
+}
+a{
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent
+}
+
+.condition{
+  color: #c0392b;
+  font-style: inherit;
+  text-decoration: underline;  
+}
+ins{
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none}
+mark{
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold
+}
+del{
+    text-decoration:line-through
+}
+abbr[title],dfn[title]{
+    border-bottom:1px dotted;
+    cursor:help;
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+hr{
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #ccc;
+    margin:1em 0;
+    padding:0
+}
+
+body {
+    background-color: rgb(43, 43, 43);
+    
+}
+
+section
+{
+background-color:#FFF;
+}
+
+header {
+    background: url(../img/header.jpg);
+    
+    max-width: 1000px;
+    margin: auto;
+}
+.container
+{
+    max-width: 50em;
+    margin: 0 auto;
+   
+}
+.page a
+{
+border: 1px solid black;
+border-radius: 50%;
+background-color: rgb(117, 116, 116);
+color:black;
+padding: 6px;
+margin-right: 7px;
+
+}
+
+.page a:hover 
+{
+    color: #ecf0f1;
+    background-color: #c0392b;
+
+}
+.page
+{
+padding-top: 50px;
+padding-bottom: 20px;
+
+}
+.caddie{
+width: 40px;
+padding-right: 2px;
+float: right;
+margin-right: 10px;
+margin-top: 50px;
+
+border: 1px solid #ecf0f1;
+border-radius: 50%;
+}
+
+nav {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    background-color: transparent;
+    position: sticky;
+    padding-top: 20px;
+    top: 0;
+
+}
+nav ul {
+
+  list-style-type: none;
+}
+
+nav ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    position: relative;
+
+}
+nav ul ::after {
+  content: "";
+  display: table;
+  clear: both;
+ 
+
+}
+
+nav a {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  color: #ecf0f1;
+  transition: 0.90s;
+
+}
+
+nav a:hover{
+  
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #c0392b;
+
+  
+
+}
+
+.sous{
+  display: none;
+  box-shadow: 0px 1px 2px rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+nav > ul li:hover .sous {
+
+  display: block;
+
+}
+
+.sous li {
+
+  float: none;
+  width: 100%;
+  text-align: left;
+}
+
+.sous a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: none;
+
+}
+
+.sous a:hover{
+
+  border-bottom: 2px solid transparent;
+  background-color: transparent;
+
+}
+
+.deroulant > a::after {
+  display: inline-flex;
+  content: "▼";
+  font-size: 12px;
+  
+}
+
+.deroulant{
+  float: right;
+  
+}
+
+/*********** EFFET HOVER MENU *********************/
+
+.effet span{
+  position: absolute;
+  display: block;
+}
+
+.effet span:nth-child(1){
+  top:0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#ecf0f1);
+}
+
+.effet:hover span:nth-child(1){
+  left:100%;
+  transition: 1s;
+}
+
+.effet span:nth-child(3){
+  bottom:0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#ecf0f1);
+}
+
+.effet:hover span:nth-child(3){
+  right:100%;
+  transition: 1s;
+}
+
+
+.effet span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#ecf0f1);
+}
+
+.effet:hover span:nth-child(2){
+  top:100%;
+  transition: 1s;
+  
+}
+
+.effet span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#ecf0f1);
+}
+
+.effet:hover span:nth-child(4){
+  bottom:100%;
+  transition: 1s;
+  
+}
+
+#pageContent {
+    max-width: 1000px;
+    margin: auto;
+    border: none;
+}
+
+main {
+	float: left;
+	width: 60%;
+}
+aside {
+	float: right;
+	width: 30%;
+}
+.erreur {
+    height: 100%;
+    padding-top: 50%;
+    padding-bottom: 50%;
+}
+article h2 {
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+#logo {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 30px;
+    margin-right: 75px;
+    color: #ecf0f1;
+}
+#logo img {
+    width: 200px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+table{
+    width:100%;
+    background: url(../img/header.jpg);
+    border-collapse:collapse;
+    table-layout:auto;
+    vertical-align:top;
+    margin-bottom:15px;
+    border:1px solid #CCCCCC;
+}
+
+table thead th{
+    color:#ecf0f1;
+    background-color:#666666;
+    border:1px solid #ecf0f1;
+    border-collapse:collapse;
+    text-align:center;
+    table-layout:auto;
+    vertical-align:middle;
+}
+table thead th, table tbody td{
+    padding:6px;
+    border-collapse:collapse;
+}
+table tbody td{vertical-align:middle;
+    border-collapse:collapse;
+    border-left:1px solid #CCCCCC;
+    border-right:1px solid #CCCCCC;
+}
+table tbody tr:nth-child(odd){
+    color:#666666;
+    background-color:#ecf0f1;
+}
+table tbody tr:nth-child(even){
+    color:#666666;
+    background-color:#ecf0f1;
+}
+
+.table_annuaire{
+    display: inline-block;
+    text-align: right;
+    width:320px;
+}
+.table_annuaire input[type="text"] {
+    width:200px;
+}
+
+.table_annuaire input[name="num_prod"]{
+    width:20px;
+}
+
+.table_client{
+    display: inline-block;
+    text-align: center;
+    width:100px;
+}
+
+footer {
+    background: url(../img/header.jpg);
+    color: #ecf0f1;
+	max-width: 1000px;
+	margin: auto;
+	clear: both;
+	text-align: center;
+}
+footer p {
+	padding: 20px;
+}
+
+.ad{
+    color: black;
+}
+
+
+
+
+/*********************************************** Formulaire ***************************************/
+
+.wrapper {
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  
+  
+  .form-wrapper {
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    
+    
+    
+  }
+
+  
+
+
+  
+ 
+label {
+    font-size: 0.8em;
+    margin-bottom: 0.25em;
+    color: #222;
+    font-weight: lighter;
+  }
+
+  
+  input {
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #333;
+  }
+  
+  input::placeholder {
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: #999;
+  }
+  
+  
+  .Prenom {
+    margin-left: 1%;
+  }
+  
+  .Nom {
+    margin-right: 1%;
+  }
+  
+  .Prenom,
+  .Nom,
+  .Email
+  {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .Prenom,
+  .Nom {
+    width: 49%;
+  }
+  
+  .Email
+  {
+    width: 100%;
+  }
+  
+  .bouton {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bouton input {
+    background-color: rgb(0, 0, 0);
+    color: #ecf0f1;
+    border: 2px solid rgb(51, 51, 51);
+    width: 30%;
+    margin-top: 1em;
+    padding: 8px 0px;
+    font-size: 1em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-bottom: 0.25em;
+  }
+  
+  .bouton input:hover {
+    color: #ecf0f1;
+  
+    border: 2px solid rgb(99, 99, 99);
+  }
+  
+  
+
+  .log {
+
+    width: 200px;
+    height: 200px;
+    padding-bottom: 20px;
+  }
+
+
+  li{
+    list-style-type: none;
+ 
+
+  }
+
+  .container {
+
+    width: 800px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    list-style-type: none;
+  
+  }
+  
+  .bloc{
+    width: 200px;
+    
+   
+  }
+
+  .formproduit {
+
+
+    padding: 10px 50px 50px 10px;
+  }
+
+  #ide {
+
+    width: 0;
+    border: 0px solid;
+  }
+
+  .empty {
+
+    height: 100%;
+    padding-top: 45%;
+    padding-bottom: 45%;
+
+    text-align: center;
+  }
+
+.search {
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    width: 100%;
+    
+}
+
+.search input[type="text"] {
+
+    width: 200px;
+}
+
+
+.nav-log {
+
+  color: #ecf0f1;
+  flex: 1;
+  flex-direction: flex-end;
+}
+
+.formProfil {
+  margin: 0;
+  padding: 30px;
+  width: 300px;
+  white-space: nowrap;
+  border: 1px solid black;
+  border-radius: 50px;
+
+  
+}
+
+.formProfil a {
+  float: right;
+  color: #c0392b;
+
+}
+
+.formProfil li{
+  text-align: left;
+  padding: 10px;
+}
+
+.container-profil{
+  width: 25%;
+  padding-top: 150px;
+  margin: auto;
+}
+
+.container-profil img {
+
+  width: 150px;
+  height: 150px;
+  max-width: 100%;
+}
+.ar_prof {
+
+  width: 100%;
+  height: 900px;
+  
+ 
+}
+
+#qte{
+
+  width: 40px;
+
+}
+
+/*************** panier **************************************/
+table {
+
+  border-collapse: collapse;
+
+}
+
+table, th, td {
+
+  border: 1px solid #222222;
+
+  text-align:center;
+
+}
+
+.tbl_head_txt{
+
+  text-transform: uppercase;
+
+}
+
+.pdt_line{
+
+  display:flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+}
+
+.img_pdt{
+
+  width: 150px;
+
+  max-width:100%;
+
+}
+
+.txt_pdt{
+
+  margin: 10px;
+
+}
+
+
+.content {
+
+  padding: 50px;
+}
+
+.intro {
+
+  text-align: justify;
+  margin: auto;
+  width: 75%;
+}
+
+
+/********************** SLIDE / VUE.PHP *****************/
+
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  box-shadow: 10px 5px 5px black;
+  max-width: 1000px;
+  width: 850px;
+  height: 500px;
+  position: relative;
+  margin: auto;
+}
+
+.slideimg {
+
+    width: 850px;
+    height: 500px;
+    max-width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #ecf0f1;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #ecf0f1;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #ecf0f1;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #969a9bd3;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/******** Responsible par rapport la taille de l'écran ************/
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+@media only screen and (max-width: 900px){
+  .slideshow-container {
+    box-shadow: 10px 5px 5px black;
+    max-width: 900px;
+    width: 750px;
+    height: 400px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .slideimg {
+  
+      width: 750px;
+      height: 400px;
+      max-width: 100%;
+  }
+}
+
+  @media only screen and (max-width: 793px){
+    .slideshow-container {
+      box-shadow: 10px 5px 5px black;
+      max-width: 100%;
+      width: 550px;
+      height: 300px;
+      position: relative;
+      margin: auto;
+    }
+    
+    .slideimg {
+    
+        width: 550px;
+        height: 300px;
+        max-width: 100%;
+    }
+  }
+
+.video {
+
+  width: 850px;
+}
+
+@media only screen and (max-width: 900px){
+
+  .video{
+    width: 750px;
+  }
+}
+
+@media only screen and (max-width: 793px){
+
+  .video{
+    width: 550px;
+  }
+}
+
+@media only screen and (max-width: 530px){
+
+  .video{
+    width: 350px;
+  }
+}
+
+.checklabel {
+    
+  color: #222;
+
+}
