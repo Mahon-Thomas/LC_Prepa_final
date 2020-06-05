@@ -1,4 +1,4 @@
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
+* {
     margin:0;
     padding:0;
     border:0;
@@ -7,11 +7,15 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
     vertical-align:baseline;
     background:transparent
 }
+
 body{
-  
+   max-width: 1000px;
+    margin: auto;
+
     line-height:1;
     font-family: arial;
 }
+
 h1{
     text-align: center;
     padding: 15px;
@@ -200,7 +204,6 @@ border-radius: 50%;
 nav {
     display: inline-block;
     width: 100%;
-    margin: 0 auto;
     background-color: transparent;
     position: sticky;
     padding-top: 20px;
@@ -298,6 +301,7 @@ nav > ul li:hover .sous {
 }
 
 .deroulant{
+  width: auto;
   float: right;
   
 }
@@ -364,11 +368,6 @@ nav > ul li:hover .sous {
   
 }
 
-#pageContent {
-    max-width: 1000px;
-    margin: auto;
-    border: none;
-}
 
 main {
 	float: left;
@@ -402,7 +401,7 @@ article h2 {
 }
 table{
     width:100%;
-    background: url(../img/header.jpg);
+    
     border-collapse:collapse;
     table-layout:auto;
     vertical-align:top;
@@ -420,10 +419,11 @@ table thead th{
     vertical-align:middle;
 }
 table thead th, table tbody td{
-    padding:6px;
+    padding:4px;
     border-collapse:collapse;
 }
-table tbody td{vertical-align:middle;
+table tbody td{
+    vertical-align:middle;
     border-collapse:collapse;
     border-left:1px solid #CCCCCC;
     border-right:1px solid #CCCCCC;
@@ -453,7 +453,8 @@ table tbody tr:nth-child(even){
 .table_client{
     display: inline-block;
     text-align: center;
-    width:100px;
+    width: auto;
+    
 }
 
 footer {
@@ -490,17 +491,31 @@ footer p {
   
   
   .form-wrapper {
-    
-    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 20px 40px;
     
     
-    
   }
 
+  .form-addprod {
+    
+      display: flex;
+      flex-direction: column;
+      padding: 20px 40px;
+      justify-content: center;
+      align-items: center;
+      
+  }
   
+  .form-addprod H2 {
+    font-weight: bold;
+    letter-spacing: 1px;
+  text-transform: uppercase;
+    text-align: center;
+    color: black;
+    padding-bottom: 15px;
+  }
 
 
   
@@ -511,12 +526,12 @@ label {
     color: #222;
     font-weight: lighter;
   }
-
   
-  input {
+  input, textarea{
     padding: 10px 10px;
     margin: 5px;
     border-radius: 5px;
+    background-color: white;
     outline: none;
     border: 1px solid #333;
   }
@@ -867,12 +882,17 @@ img {vertical-align: middle;}
   to {opacity: 1}
 }
 
+.video {
+
+  width: 850px;
+}
+
 /******** Responsible par rapport la taille de l'écran ************/
-@media only screen and (max-width: 300px) {
+@media screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
 
-@media only screen and (max-width: 900px){
+@media screen and (max-width: 900px){
   .slideshow-container {
     box-shadow: 10px 5px 5px black;
     max-width: 900px;
@@ -881,6 +901,10 @@ img {vertical-align: middle;}
     position: relative;
     margin: auto;
   }
+
+  .video{
+    width: 750px;
+  }
   
   .slideimg {
   
@@ -888,9 +912,24 @@ img {vertical-align: middle;}
       height: 400px;
       max-width: 100%;
   }
+
+  nav ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    position: relative;
+
 }
 
-  @media only screen and (max-width: 793px){
+.deroulant {
+  width: auto;
+  float: right;
+}
+
+
+}
+
+  @media screen and (max-width: 793px){
     .slideshow-container {
       box-shadow: 10px 5px 5px black;
       max-width: 100%;
@@ -906,32 +945,61 @@ img {vertical-align: middle;}
         height: 300px;
         max-width: 100%;
     }
+
+    .video{
+      width: 550px;
+    }
+
+    nav ul li {
+      float: center;
+      width: 100%;
+      text-align: center;
+      
+  
   }
 
-.video {
+    .deroulant {
+      width: 100%;
+      float: center;
+    }
+  }
 
-  width: 850px;
-}
 
-@media only screen and (max-width: 900px){
+@media screen and (max-width: 530px){
+
+  .slideshow-container {
+    box-shadow: 10px 5px 5px black;
+    max-width: 100%;
+    width: 400px;
+    height: 300px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .slideimg {
+  
+      width: 400px;
+      height: 300px;
+      max-width: 100%;
+  }
 
   .video{
-    width: 750px;
+    width: 400px;
   }
+
+  nav ul li {
+    float: left;
+    width: 100%;
+    text-align: center;
+    position: relative;
+
 }
 
-@media only screen and (max-width: 793px){
-
-  .video{
-    width: 550px;
+  .deroulant {
+    width: 100%;
   }
-}
 
-@media only screen and (max-width: 530px){
 
-  .video{
-    width: 350px;
-  }
 }
 
 .checklabel {

@@ -43,6 +43,8 @@
        if ($_REQUEST['action'] == 'Supprimer') {
           
           $employe->setdelete(intval($_POST['ide']));
+          $tblEmp = $employe->getSelect();
+          include "./vue/VueDashboard.php";
          
         } 
         
@@ -80,14 +82,6 @@
          
         } 
 
-        if ($_REQUEST['action'] == 'modifier') {
-          
-
-          $employe->setUpdateuti($_POST);
-          header("Location: index.php?action=Formlog");
-
-        }
-
 
         if ($_REQUEST['action'] == 'Modifier') {
           if (!empty($_SESSION['user'])){
@@ -121,7 +115,7 @@
           
         $tblpanier = $prod->panier($_POST);
         
-          include "vue/vuePanier.php";
+          header("Location: index.php?action=panier");
         }
 
 

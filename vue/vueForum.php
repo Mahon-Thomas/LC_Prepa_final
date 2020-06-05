@@ -11,7 +11,7 @@
 
     <h3> Evolution Clio 1 Tuning 2015-2018 </h3><br>
 
-    <video src="./video/Evolution_Clio_1_Tuning_2015-2018.mp4" alt="Evolution Clio 1 Tuning 2015-2018" controls></video><br> <br>
+    <video class="video" src="./video/Evolution_Clio_1_Tuning_2015-2018.mp4" alt="Evolution Clio 1 Tuning 2015-2018" controls></video><br> <br>
 
    
 
@@ -19,7 +19,7 @@
 
     <h3> voiture tuning 2 </h3><br>
 
-    <video src="./video/voiture_tuning_2.mp4" alt="voiture tuning 2" controls></video><br> <br>
+    <video class="video" src="./video/voiture_tuning_2.mp4" alt="voiture tuning 2" controls></video><br> <br>
 
    </acticle>
 
@@ -33,7 +33,7 @@
     <th> Commentaire </th>
     
     </tr>
-    <tr>
+
     <?php
         
         
@@ -45,13 +45,13 @@
             "<tr>" 
                 ."<td>".$comment['pseudo']."</td>"
                 ."<td>".$comment['sujet']."</td>"
-                ."<td>".$comment['comment'] ."</td>".
-                
-            "</tr>";
+                ."<td>".$comment['comment'] ."</td>
+              
+            </tr>";
             echo "</form>";
           }
         ?>
-    </tr>
+   
     </table>
         
 

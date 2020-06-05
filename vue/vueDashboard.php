@@ -7,7 +7,7 @@ if (!empty($_SESSION['userId']) ) {
         <br><h1> Annuaire des utilisateurs de Lc Prépa !</h1>
    
     <article>
-    <table class="table_client">
+    <table>
         <?php
         echo "<thead>";
           echo "<tr>";
@@ -32,9 +32,7 @@ if (!empty($_SESSION['userId']) ) {
                 ."<td>"."<input type='text' name='prenom' id='prenom' value='".$client['prenom'] . "'></td>"
                 ."<td>"."<input type='text' name='date' id='date' value='".$client['date_nais'] . "'></td>"
                 ."<td>"."<input type='text' name='mail' id='mail'  value='".$client['email'] . "'></td>"
-                ."<td>". "<input type='submit' name='action' value='Supprimer'></td>"
-                ."<td>". "<input type='submit' name='action' value='modifier'></td>".
-            "</tr>";
+                ."<td>". "<input type='submit' name='action' value='Supprimer'></td></tr>";
             echo "</form>";
           }
         echo "</tbody>";
@@ -43,12 +41,13 @@ if (!empty($_SESSION['userId']) ) {
         </article>
 
       <acticle>
-      <table>
-      <tr>
 
- 
-        <td>
+    
+    <div class="form-addprod">    
+      
       <h2>Ajouter un produit</h2><br>
+
+      
       <form action="index.php?action=Admin" method="POST">
 
 
@@ -75,10 +74,12 @@ if (!empty($_SESSION['userId']) ) {
 
             
     </form>
-    
-</td>
-</tr>
-</table>
+
+
+        </div>
+
+
+
 </article>
 
 <?php
