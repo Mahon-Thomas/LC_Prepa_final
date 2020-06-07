@@ -156,23 +156,23 @@ $numfact = date('d').date("H").$_SESSION['user'][0][0].count($_SESSION['panierpr
 
                         <tr>
 
-                            <td colspan="5" text-align="right">Sous-total :</td>
-                            <td text-align="right" colspan="1"><strong><?php echo number_format($total_price, 2) ." €"; ?></strong></td>
+                            <td colspan="4" text-align="right">Sous-total :</td>
+                            <td text-align="right" colspan="2"><strong><?php echo number_format($total_price, 2) ." €"; ?></strong></td>
                             
 
                         </tr>
 
                         <tr>
-                            <td colspan="5" text-align="right">TVA (8,5%) :</td>
-                            <td text-align="right" colspan="1"><strong><?php echo number_format($montantTva, 2)." €"; ?></strong></td>
+                            <td colspan="4" text-align="right">TVA (8,5%) :</td>
+                            <td text-align="right" colspan="2"><strong><?php echo number_format($montantTva, 2)." €"; ?></strong></td>
                             
                         </tr>
                         <?php
                             $montanttotal = $total_price + $montantTva ;
                         ?>
                         <tr>
-                            <td colspan="5" text-align="right">Montant Total : </td>
-                            <td text-align="right" colspan="1"><strong><?php echo number_format($montanttotal, 2)." €"; ?></strong></td>
+                            <td colspan="4" text-align="right">Montant Total : </td>
+                            <td text-align="right" colspan="2"><strong><?php echo number_format($montanttotal, 2)." €"; ?></strong></td>
                             
                         </tr>
                         </tbody>
