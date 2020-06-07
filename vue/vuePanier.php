@@ -19,7 +19,7 @@
 
           <th class="tbl_head">
 
-            <h4 class="tbl_head_txt">Type</h4>
+            <h4 class='tbl_head_txt'>Type</h4>
 
           </th>
 

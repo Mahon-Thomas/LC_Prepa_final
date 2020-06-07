@@ -7,20 +7,23 @@ if (!empty($_SESSION['userId']) ) {
         <br><h1> Annuaire des utilisateurs de Lc Prépa !</h1>
    
     <article>
-    <table>
-        <?php
-        echo "<thead>";
-          echo "<tr>";
-            echo "<th>#</th>";
-             echo "<th>Nom</th>";
-            echo "<th> Prénom </th>";
-            echo "<th>Date de naissance</th>";
+    <table class="tbl-cart">
+     <tr>
+        <th class='tbl_head'>#</th>
+        <th class='tbl_head'><h4 class="tbl_head_txt">Nom </h4></th>
+        <th class='tbl_head'><h4 class="tbl_head_txt"> Prénom </h4></th>
+        <th class='tbl_head'><h4 class="tbl_head_txt"> Date de naissance </h4></th>
             
-            echo "<th>Adresse email</th>";
-          echo "</tr>";
-        echo "</thead>";
+        <th class='tbl_head'><h4 class="tbl_head_txt"> Adresse email </h4></th>
+
+      </tr>
+
+        <?php
         
-        echo "<tbody>";
+          
+        
+        
+        echo "<div class='pdt_line'>";
          
           
           foreach ($tblEmp as $client) {
@@ -35,7 +38,7 @@ if (!empty($_SESSION['userId']) ) {
                 ."<td>". "<input type='submit' name='action' value='Supprimer'></td></tr>";
             echo "</form>";
           }
-        echo "</tbody>";
+        echo "</div>";
         ?>
       </table>
         </article>

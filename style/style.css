@@ -8,10 +8,12 @@
     background:transparent
 }
 
-body{
+body, footer{
    max-width: 1000px;
-    margin: auto;
-
+    margin: 0 auto;
+      display: table;
+      height: 100%;
+      width: 100%;
     line-height:1;
     font-family: arial;
 }
@@ -91,7 +93,8 @@ h4{
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
-    display:block
+    display:block;
+    height:auto; 
 }
 nav ul {
     list-style:none
@@ -461,11 +464,15 @@ footer {
     background: url(../img/header.jpg);
     color: #ecf0f1;
 	max-width: 1000px;
-	margin: auto;
-	clear: both;
+  margin: auto;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 	text-align: center;
 }
 footer p {
+  font-size: 18px;
 	padding: 20px;
 }
 
@@ -958,6 +965,15 @@ img {vertical-align: middle;}
   
   }
 
+  .form-addprod {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+  }
     .deroulant {
       width: 100%;
       float: center;
@@ -999,8 +1015,17 @@ img {vertical-align: middle;}
     width: 100%;
   }
 
-
 }
+
+@media only screen and (max-width: 410px) {
+  .intro p {
+    font-size: 250px;
+  }
+  H1 {
+    font-size: 35px;
+  }
+}
+
 
 .checklabel {
     

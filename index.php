@@ -6,7 +6,7 @@
   
   try {
 
-      if (isset($_REQUEST['action']) || !empty($_REQUEST['action'])) 
+      if (isset($_REQUEST['action'])) 
       {
         session_start();
         require "./vue/vueHeader.php";
