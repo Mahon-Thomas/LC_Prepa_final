@@ -75,28 +75,6 @@ class Employes extends DB {
    
 }
 
-class Pagination extends DB {
- 
-  private $requete;            // valeur liée à une fonction
-  private $value_bind_func;    // valeur liée à une fonction
-  private $page;
-  private $limite;
-  private $nombreLignes;
-  private $nombreElementsTotal;
-  private $nombreDePages;
-  private $debut;
-
-  function compteLignes() {
-
-    $strSQL = "SELECT SQL_CALC_FOUND_ROWS * FROM tbl_employe ORDER BY emp_nom  LIMIT :limite OFFSET :debut";
-    $strSQL->bindValue('limite',$limite,PDO::PARAM_INT);
-    $strSQL->bindValue('debut',$debut,PDO::PARAM_INT);
-    $tabValeur = array("*");
-    ;
-    return $this->Requete($strSQL, $tabValeur);
-  }
-
-}
 
 Class Produit extends DB {
 
@@ -157,6 +135,7 @@ Class Produit extends DB {
     $Nbprod = $Nb[0];
     
     $Nbtotalpage = ceil($Nbprod[0]/$limite);
+    
     if(isset($_REQUEST['page']) AND !empty($_REQUEST['page']) AND $_REQUEST['page'] > 0 AND $_REQUEST['page'] <= $Nbprod) {
 
       $_REQUEST['page'] = intval($_REQUEST['page']);

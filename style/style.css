@@ -18,6 +18,10 @@ body, footer{
     font-family: arial;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1{
     text-align: center;
     padding: 15px;
@@ -166,8 +170,7 @@ header {
 }
 .container
 {
-    max-width: 50em;
-    margin: 0 auto;
+    
    
 }
 .page a
@@ -177,7 +180,7 @@ border-radius: 50%;
 background-color: rgb(117, 116, 116);
 color:black;
 padding: 6px;
-margin-right: 7px;
+margin-right: 10px;
 
 }
 
@@ -189,21 +192,27 @@ margin-right: 7px;
 }
 .page
 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 padding-top: 50px;
 padding-bottom: 20px;
 
 }
 .caddie{
-width: 40px;
-padding-right: 2px;
-float: right;
-margin-right: 10px;
-margin-top: 50px;
-
-border: 1px solid #ecf0f1;
-border-radius: 50%;
+padding-right: 15px;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+}
+.caddie a {
+  text-decoration: none;
 }
 
+.caddie a:hover {
+  transition: ease 0.8s;
+  color: #c0392b;
+}
 nav {
     display: inline-block;
     width: 100%;
@@ -402,43 +411,9 @@ article h2 {
     vertical-align: middle;
     margin-right: 10px;
 }
-table{
-    width:100%;
-    
-    border-collapse:collapse;
-    table-layout:auto;
-    vertical-align:top;
-    margin-bottom:15px;
-    border:1px solid #CCCCCC;
-}
 
-table thead th{
-    color:#ecf0f1;
-    background-color:#666666;
-    border:1px solid #ecf0f1;
-    border-collapse:collapse;
-    text-align:center;
-    table-layout:auto;
-    vertical-align:middle;
-}
-table thead th, table tbody td{
-    padding:4px;
-    border-collapse:collapse;
-}
-table tbody td{
-    vertical-align:middle;
-    border-collapse:collapse;
-    border-left:1px solid #CCCCCC;
-    border-right:1px solid #CCCCCC;
-}
-table tbody tr:nth-child(odd){
-    color:#666666;
-    background-color:#ecf0f1;
-}
-table tbody tr:nth-child(even){
-    color:#666666;
-    background-color:#ecf0f1;
-}
+
+
 
 .table_annuaire{
     display: inline-block;
@@ -620,18 +595,16 @@ label {
   }
 
   .container {
-
-    width: 800px;
     display:flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     list-style-type: none;
   
   }
   
   .bloc{
-    width: 200px;
+    width: 250px;
     
    
   }
@@ -734,12 +707,8 @@ table {
 
 }
 
-table, th, td {
-
-  border: 1px solid #222222;
-
-  text-align:center;
-
+th, td  {
+  text-align: center;
 }
 
 .tbl_head_txt{
@@ -770,6 +739,12 @@ table, th, td {
 
   margin: 10px;
 
+}
+
+.txt_td td{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -864,7 +839,7 @@ img {vertical-align: middle;}
   background-color: #969a9bd3;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: 0.6s ease;
 }
 
 .active, .dot:hover {
@@ -874,9 +849,9 @@ img {vertical-align: middle;}
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 2s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 5s;
 }
 
 @-webkit-keyframes fade {
@@ -893,6 +868,88 @@ img {vertical-align: middle;}
 
   width: 850px;
 }
+
+
+/************************* Page Commande | vueOrder.php *******************/
+
+.coordlc {
+
+  display: flex;
+  flex-direction: row;
+  padding-top: 15px;
+  margin-left: 25px;
+  
+}
+
+.logoC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 5px;
+}
+.coordC p {
+
+ padding-bottom: 1px;
+}
+
+.titre {
+  font-weight: bold;
+
+}
+
+.coordCli {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 25px;
+}
+
+.coordCli h4 {
+  padding-top: 20px;
+}
+
+
+.cadre {
+  padding: 50px;
+  border: 2px solid #c0392b;
+  border-radius: 5px;
+  
+}
+
+.coordCli p {
+  text-align: left;
+}
+
+.titrefact {
+  font-size: 20px;
+}
+
+.thead {
+
+  background-color: #c0392b;
+}
+
+.table-fact-prod {
+  width: 100%;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.pdf{
+  display: none;
+  border: 0;
+}
+
+.btn-pdf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 350px;
+  padding-bottom: 350px;
+}
+
+
 
 /******** Responsible par rapport la taille de l'écran ************/
 @media screen and (max-width: 300px) {

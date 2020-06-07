@@ -47,6 +47,25 @@
           include "./vue/VueDashboard.php";
          
         } 
+
+
+
+        if ($_REQUEST['action']=='commande'){
+
+          if (!empty($_SESSION["panierprod"])){
+ 
+            include './vue/vueOrder.php';
+
+          }
+
+          
+        }
+
+        if($_REQUEST['action'] == 'pdf'){
+
+         include "./vue/pdf.php";
+        }
+
         
         if ($_REQUEST['action'] == 'deletep') {
         if(!empty($_SESSION["panierprod"])) {
@@ -66,7 +85,7 @@
             }
 
 
-            include './vue/vuePanier.php';
+            header ("Location: index.php?action=panier");
           
           
         
@@ -115,7 +134,7 @@
           
         $tblpanier = $prod->panier($_POST);
         
-          header("Location: index.php?action=panier");
+          header("Location: index.php?action=Prods&page");
         }
 
 

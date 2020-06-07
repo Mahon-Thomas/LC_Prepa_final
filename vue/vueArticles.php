@@ -72,7 +72,7 @@
         </article>
        
         <div class="page">
-        <center>
+        
         <?php
        
         if ($recherche == 1){
@@ -106,6 +106,6 @@
         ?>
       <br/><br/>
 
-      </center>
+
         </div>
         </section>

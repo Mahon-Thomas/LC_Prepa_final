@@ -1,4 +1,5 @@
 <?php
+setlocale(LC_TIME, "fr_FR");
 
 if (!empty($_SESSION['userId']) ) {
   
@@ -11,13 +12,19 @@ if (!empty($_SESSION['userId']) ) {
 
 }
 
+if (empty($_SESSION["panierprod"])){
+  $qte = 0;
+}else {
+  $qte = count($_SESSION["panierprod"]);
+}
+
 
 ?>
   <header>
     <div id="logo"><img src="./img/logo.png" alt="Logo"></div>
     
 
-    <div class="caddie"><a href="index.php?action=panier"><img src='./img/cart.png' width='40px'></div></a>
+    <div class="caddie"><a href="index.php?action=panier"><img src='./img/cart.png' width='50px'><?php echo $qte ?></a></div>
       <!-- ------------------------------------------- Menu ---------------------------------------- -->
     <nav>  
         <ul>

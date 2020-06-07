@@ -5,7 +5,7 @@
    if (isset($_SESSION["panierprod"])) {
 
     ?>
-  <table class="tbl-cart" cellpadding="10" cellspacing="1">
+  <table class="table tbl-cart" cellpadding="10" cellspacing="1">
 
       <tbody>
 
@@ -87,19 +87,19 @@
                   </div>
 
                 </td>
+              
+                <td><div class="pdt_line"> <?php echo '<p class="txt_pdt">'.$prod["type"].'</p>'; ?> </div></td>
 
-                <td> <?php echo $prod["type"]; ?> </td>
+                <td><div class="pdt_line"> <?php echo '<p class="txt_pdt">'.$prod["idprod"].'</p>'; ?> </div></td>
 
-                <td> <?php echo $prod["idprod"]; ?> </td>
+                <td><div class="pdt_line"> <?php echo '<p class="txt_pdt">'.$prod["qte"].'</p>'; ?> </div></td>
 
-                <td> <?php echo $prod["qte"]; ?> </td>
+                <td><div class="pdt_line"> <?php echo '<p class="txt_pdt">'.$prod["prix"]."€ </p>"; ?> </div></td>
 
-                <td> <?php echo $prod["prix"]." €"; ?> </td>
+                <td><div class="pdt_line"> <?php echo '<p class="txt_pdt">'.number_format($prod_prix, 2) ."€ </p>"; ?> </div></td>
 
-                <td> <?php echo number_format($prod_prix, 2) . " €"; ?> </td>
-
-                <td><a href="index.php?action=deletep&idprod=<?php echo $prod["idprod"]; ?>"><img src="./img/delete.png" alt="Supprimer Produit" /></a></td>
-
+                <td><div class="pdt_line"><a class="txt_pdt" href="index.php?action=deletep&idprod=<?php echo $prod["idprod"]; ?>"><img src="./img/delete.png" alt="Supprimer Produit" /></a>  </div></td>
+              
               </tr>
 
           <?php
@@ -117,9 +117,15 @@
 
         <tr>
 
-          <td colspan="2" align="right">Total:</td>
-          <td align="right" colspan="5"><strong><?php echo number_format($total_price, 2) . " €"; ?></strong></td>
+          <td colspan="6" text-align="right">Sous-total:</td>
+          <td text-align="right" colspan="1"><strong><?php echo number_format($total_price, 2) ." €"; ?></strong></td>
           <td></td>
+
+        </tr>
+
+        <tr>
+          <td colspan="6"></td>
+        <td  colspan="2" class="text-right"><a class="btn btn-primary" type="submit" href="index.php?action=commande"> Passer commande </a></td>
 
         </tr>
 

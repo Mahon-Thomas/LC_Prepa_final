@@ -23,10 +23,10 @@
 
    </acticle>
 
-    <hr>
+
     <article>
 
-    <table>
+    <table class="table table-sm">
     <tr>
     <th> Auteur </th>
     <th> sujet </th>

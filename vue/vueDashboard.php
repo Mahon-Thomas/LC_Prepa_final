@@ -4,17 +4,18 @@ if (!empty($_SESSION['userId']) ) {
 ?>
 <section id="pageContent">
     <article>
-        <br><h1> Annuaire des utilisateurs de Lc Prépa !</h1>
+        <h1> Annuaire des utilisateurs de Lc Prépa !</h1>
    
     <article>
-    <table class="tbl-cart">
+    <div class="table-responsive">
+    <table class="table table-sm">
      <tr>
-        <th class='tbl_head'>#</th>
-        <th class='tbl_head'><h4 class="tbl_head_txt">Nom </h4></th>
-        <th class='tbl_head'><h4 class="tbl_head_txt"> Prénom </h4></th>
-        <th class='tbl_head'><h4 class="tbl_head_txt"> Date de naissance </h4></th>
+        <th >#</th>
+        <th ><h4 class="tbl_head_txt">Nom </h4></th>
+        <th ><h4 class="tbl_head_txt"> Prénom </h4></th>
+        <th ><h4 class="tbl_head_txt"> Date de naissance </h4></th>
             
-        <th class='tbl_head'><h4 class="tbl_head_txt"> Adresse email </h4></th>
+        <th ><h4 class="tbl_head_txt"> Adresse email </h4></th>
 
       </tr>
 
@@ -23,7 +24,6 @@ if (!empty($_SESSION['userId']) ) {
           
         
         
-        echo "<div class='pdt_line'>";
          
           
           foreach ($tblEmp as $client) {
@@ -31,16 +31,17 @@ if (!empty($_SESSION['userId']) ) {
             echo 
             "<tr>" 
                 ."<td>"."<input readonly type='text' name='ide' id='ide' value=".$client['num']."></td>"
-                ."<td>"."<input type='text' name='nom' id='nom' value='".$client['nom'] . "'></td>"  
-                ."<td>"."<input type='text' name='prenom' id='prenom' value='".$client['prenom'] . "'></td>"
-                ."<td>"."<input type='text' name='date' id='date' value='".$client['date_nais'] . "'></td>"
-                ."<td>"."<input type='text' name='mail' id='mail'  value='".$client['email'] . "'></td>"
-                ."<td>". "<input type='submit' name='action' value='Supprimer'></td></tr>";
+                ."<td>".$client['nom'] ."</td>"  
+                ."<td>".$client['prenom'] ."</td>"
+                ."<td>".$client['date_nais']."</td>"
+                ."<td>".$client['email']."</td>"
+                ."<td>". "<input class='btn btn-danger' type='submit' name='action' value='Supprimer'></td></tr>";
             echo "</form>";
           }
-        echo "</div>";
+
         ?>
       </table>
+        </div>
         </article>
 
       <acticle>

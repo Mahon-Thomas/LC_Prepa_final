@@ -74,8 +74,9 @@ function showSlides(n) {
 }
 </script>
 
-    
+
   </div>
+
 
       <article class="intro">
 
