@@ -181,7 +181,7 @@ $numfact = date('d').date("H").$_SESSION['user'][0][0].count($_SESSION['panierpr
                 <td></td>
                 
                 
-                <td colspan="6" class="text-right "><a href="index.php?action=pdf" class="btn btn-primary">Convertir pdf</a></td>
+                <td colspan="6" class="text-right "><a href="index.php?action=pdf" class="btn btn-danger">Convertir en pdf</a></td>
                 </tr>
             </table>
         </div>

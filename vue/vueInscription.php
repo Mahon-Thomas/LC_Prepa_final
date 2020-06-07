@@ -15,28 +15,30 @@
 
           
               <div class="Nom">
-                  <label>Nom :</label>
+
+                  <label for="nom">Nom :</label>
                   <input type="text" name="nom" id="nom"  minlength='2' maxlength='25' placeholder="Gravier">
 
-              
-
-                  <label>Prénom :</label>
+                  <label for="prenom">Prénom :</label>
                   <input type="text" name="prenom" id="prenom"  minlength='2' maxlength='25' placeholder="Antoine">
+
+                  <label for="adresse">Adresse :</label>
+                  <input type="text" name="adresse" id="adresse"  minlength='2' maxlength='25' placeholder="45 rue ...">
                   
-                  <label>Identifiant :</label>
+                  <label for="login">Identifiant :</label>
                   <input type="text" name="login" id="login"  minlength='2' maxlength='25' placeholder="Antoine775">
               
-                  <label>Date de naissance :</label>
+                  <label for="date">Date de naissance :</label>
                   <input type="date" name="date" id="date"  minlength='2' maxlength='25' >
                   
     
-                  <label>Numéro Téléphone</label>
+                  <label for="tel">Numéro Téléphone</label>
                   <input type="text" name="tel" id="tel" placeholder="0693587465">
               
-                  <label>Mail</label>
+                  <label for="mail">Mail</label>
                   <input type="text" name="mail" id="mail"  minlength='2' maxlength='50' placeholder="lc974@gmail.com">
 
-                  <label>Mot de Passe</label>
+                  <label for="mdp">Mot de Passe</label>
                   <input type="password" name="mdp" id="mdp"  minlength='2' maxlength='50' placeholder="Lcdel974@@">
 
 

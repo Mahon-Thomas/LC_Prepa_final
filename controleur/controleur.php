@@ -22,10 +22,11 @@ class Employes extends DB {
 
   function setAdd($tblemp){
     
-    $strSQL = "INSERT INTO utilisateur (nom, prenom, login, date_nais, tel, email, mdp) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $strSQL = "INSERT INTO utilisateur (nom, prenom, adresse, login, date_nais, tel, email, mdp) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $tabValeur = array(
       $tblemp['nom'],
       $tblemp['prenom'],
+      $tblemp['adresse'],
       $tblemp['login'],
       $tblemp['date'],
       $tblemp['tel'],
