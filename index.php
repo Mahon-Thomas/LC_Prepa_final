@@ -351,13 +351,8 @@
       }else {
 
         include "./vue/vueHeader.php";
-       
         include "./vue/vueMenu.php";
-        require "./controleur/controleur.php";
-        $employes = new Employes();
-        $prod = new Produit();
-        $tblprod = $prod->getArticle();
-        $tblEmp = $employes->getSelect();
+        
         include "./vue/vue.php";
         include "./vue/vueFooter.php";
       }
