@@ -49,7 +49,7 @@
                   <p><input readonly type='text' name='num_prod' id='ide' value=".$produit['num_prod']."></p>
                   <img src='".$produit["img_prod"]."' alt='img_pdt' class='img_pdt'/>
                   <p>".$produit['nom_prod']."</p> <br />
-                  <p><input type='number' name='qte' id='qte' value='1' min='1' max='100'>
+                  <p><input class='qte'type='number' name='qte' id='qte' value='1' min='1' max='100'>
                     <p>".$produit['prix_prod'] ."€ </p>
                   <p><input type='submit' name='action' value='Ajouter au panier' /> </p>
                   </center> 

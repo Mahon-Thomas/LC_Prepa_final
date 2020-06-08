@@ -8,7 +8,9 @@ $tel = $_SESSION['user'][0][5];
 $adresse = $_SESSION['user'][0][6];
 $email = $_SESSION['user'][0][7];
 
-$numfact = date('d').date("H").$_SESSION['user'][0][0].count($_SESSION['panierprod']);
+$numfact = $_SESSION['num_fact'];
+
+
 ?>
 <section id="pageContent">
 <div class="btn-pdf">
@@ -184,6 +186,10 @@ $numfact = date('d').date("H").$_SESSION['user'][0][0].count($_SESSION['panierpr
 </div>
 </section>
 <?php
+unset($_SESSION['montanttotal']);
+unset($_SESSION['num_fact']);
+unset($_SESSION['panierprod']);
+
 }else{
  header("Location: index.php?action=Accueil");
 }

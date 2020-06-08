@@ -110,8 +110,14 @@
 
                 $total_price += ($prod["prix"] * $prod["qte"]);
 
-            }
+                $tvap = 8.5;
+                    $tva = $tvap / 100;
+                
+                $montantTva = $total_price * $tva;
+                
 
+            }
+            
           ?>
 
 
@@ -124,10 +130,23 @@
         </tr>
 
         <tr>
-          <td colspan="6"></td>
-        <td  colspan="2" class="text-right"><a class="btn btn-primary" type="submit" href="index.php?action=commande"> Passer commande </a></td>
-
+            <td colspan="6" text-align="right">TVA (8,5%) :</td>
+             <td text-align="right" colspan="1"><strong><?php echo number_format($montantTva, 2)." €"; ?></strong></td>
+                    
         </tr>
+           <?php
+             $_SESSION['montanttotal'] = $total_price + $montantTva ;
+           ?>
+         <tr>
+            <td colspan="6" text-align="right">Montant Total : </td>
+            <td text-align="right" colspan="1"><strong><?php echo number_format($_SESSION['montanttotal'], 2)." €"; ?></strong></td>
+                    
+          </tr>
+
+           <tr>
+            <td colspan="6"></td>
+            <td  colspan="2" class="text-right"><a class="btn btn-primary" type="submit" href="index.php?action=commande"> Passer commande </a></td>
+          </tr>
 
       </tbody>
 

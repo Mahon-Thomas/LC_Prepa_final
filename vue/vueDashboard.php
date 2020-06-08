@@ -5,9 +5,8 @@ if (!empty($_SESSION['userId']) ) {
 <section id="pageContent">
     <article>
         <h1> Annuaire des utilisateurs de Lc Prépa !</h1>
-   
-    <article>
-    <div class="table-responsive">
+
+    <div class="table-responsive p-3">
     <table class="table table-sm">
      <tr>
         <th >#</th>
@@ -44,6 +43,44 @@ if (!empty($_SESSION['userId']) ) {
         </div>
         </article>
 
+    <acticle>
+
+    <h1> Commentaire des utilisateurs de Lc Prépa !</h1>
+    <div class="table-responsive p-3">
+    <table class="table table-sm">
+     <tr>
+        <th coldspan="1">#</th>
+        <th ><h4 class="tbl_head_txt">Auteur </h4></th>
+        <th ><h4 class="tbl_head_txt"> Sujet </h4></th>
+        <th coldspan='2'><h4 class="tbl_head_txt">Commentaire </h4></th>
+        <th></th>
+
+      </tr>
+
+        <?php
+        
+          
+        
+        
+         
+          
+          foreach ($tblcomment as $avis) {
+            echo "<form action='index.php?action=Admin' method='POST'>";
+            echo 
+            "<tr>" 
+                ."<td>"."<input readonly type='text' name='ide' id='ide' value=".$avis['num']."></td>"
+                ."<td>".$avis['pseudo'] ."</td>" 
+                ."<td>".$avis['sujet'] ."</td>"  
+                ."<td coldspan='2'>".$avis['comment'] ."</td>"
+                ."<td>". "<input class='btn btn-danger' type='submit' name='action' value='X'></td></tr>";
+            echo "</form>";
+          }
+
+        ?>
+      </table>
+        </div>
+    
+    </action>
       <acticle>
 
     
@@ -65,7 +102,7 @@ if (!empty($_SESSION['userId']) ) {
           <input type="numeric" name="prix" id="prix"><br><br>
 
           <label for="description">Description</label><br>
-          <textarea id="desc" name="desc" rows="5" cols="33">
+          <textarea id="desc" name="desc"  cols="20">
 
           </textarea><br><br>
 

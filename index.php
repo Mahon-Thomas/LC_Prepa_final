@@ -11,10 +11,15 @@
         session_start();
         require "./vue/vueHeader.php";
         require "./controleur/controleur.php";
+        require "./controleur/membre.php";
+        require "./controleur/Forum.php";
+        require "./controleur/Commande.php";
+        require "./controleur/Produits.php";
         require "./vue/vueMenu.php";
         $employe = new Employes();
         $prod = new Produit();
         $comment = new Forum();
+        $order = new Commande();
         
 
 
@@ -52,18 +57,35 @@
 
         if ($_REQUEST['action']=='commande'){
 
-          if (!empty($_SESSION["panierprod"])){
- 
+          if (!empty($_SESSION["panierprod"]) && !empty($_SESSION['user'])){
+            
+            $res = $order->InsertOrder($_SESSION['user']);
+            
+            $tblorder = $order->getOrder($res);
             include './vue/vueOrder.php';
 
+          }else{
+            header ("Location: index.php?action=Accueil");
           }
 
           
         }
 
-        if($_REQUEST['action'] == 'pdf'){
 
-         include "./vue/pdf.php";
+
+        if($_REQUEST['action'] == 'pdf'){
+          if (!empty($_SESSION['num_fact'])){
+          
+          include "./vue/pdf.php";
+          
+          }
+          
+        }
+
+        if ($_REQUEST['action'] == 'endorder'){
+          unset($_SESSION['panierprod']);
+
+          header("Location: index.php?action=Accueil");
         }
 
         
@@ -150,10 +172,9 @@
 
         if ($_GET['action'] == 'formLog') {
           
-          
 
         if (!empty($_SESSION['userId'])) {
-
+          $tblcomment = $comment->getcomments();
           $tblEmp = $employe->getSelect();
           
           include "./vue/vueDashboard.php"; 
@@ -171,10 +192,6 @@
        
           if (!empty($_SESSION["userId"]) || !empty($_SESSION["user"])) {
 
-        require_once "./controleur/membre.php";
-        require_once "./controleur/controleur.php";
-        $comment = new Forum();
-        $membre = new Membre();
             $tblcomment = $comment->Commentaire($_POST);
             $tblcomment = $comment->getcomments();
           include "./vue/vueForum.php";
@@ -191,7 +208,9 @@
 
   if ($_GET['action'] == 'profil'){
     if (!empty($_SESSION['user'])){
-
+      
+      $tblorder = $order->allOrder($_SESSION['user'][0][0]);
+  
       include "./vue/vueProfil.php";
 
     }
@@ -224,28 +243,30 @@
       }
     }
 
-    if ($_REQUEST['action'] == 'Suppr') {
-      $supcomment = new Forum();
-      $supcomment->setSup(intval($_POST['num']));
-      require_once "./vue/vueDashboard.php";
+    if ($_REQUEST['action'] == 'X') {
+      
+      $comment->setSup(intval($_POST['ide']));
+      $tblcomment = $comment->getcomments();
+      $tblEmp = $employe->getSelect();
+      include "./vue/vueDashboard.php";
+
     }
 
 
 
         if ($_GET['action'] == 'forum'){
      
-      if (!empty($_SESSION["userId"]) || !empty($_SESSION["user"])) {
+          if (!empty($_SESSION["userId"]) || !empty($_SESSION["user"])) {
 
-            $tblcomment = $comment->getcomments();
-            include "./vue/vueForum.php";
-          
-          
-         
-      }else{
-        
-        include 'vue/erreurLogin.php'; 
+                $tblcomment = $comment->getcomments();
+                include "./vue/vueForum.php";
+              
+              
+          }else{
+            
+            include 'vue/erreurLogin.php'; 
 
-        }
+            }
       }
 
         if ($_GET['action'] == 'modifProfil'){

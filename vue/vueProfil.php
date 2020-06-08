@@ -1,11 +1,10 @@
 <section id="pageContent">
 
-      <article class="ar_prof">
+      <article>
 
       <div class="container-profil">
-        <center>
+        
        <h1>Profil</h1>
-        <br>
 
         <img src="./img/avatar1.png" alt="avatar">
 
@@ -24,8 +23,48 @@
           </ul>
           
         </div>
-  </center>
       </div>
+      </article>
+
+      <article>
+        <div class="container-order">
+          <h1> Liste commande(s) </h1>
+
+          <table class="table">
+
+            <tr class="thead-dark ">
+              <th>Numéro de commande</th>
+              <th>date de commande</th>
+
+            </tr>
+
+            <tr>
+                <?php
+
+                    if(!empty($tblorder)){
+                      
+                      
+                      foreach ($tblorder as $order) {
+                        echo"<tr>";
+                          echo  "<td>".$order['num_fact']."</td>";
+                          echo  "<td>".$order['date_commande']."</td>";
+                        echo"</tr>";
+                        
+                      }
+                      
+                    }else{
+
+                      echo"<tr>";
+                          echo  "<td colspan='3' class='text-center p-5'> Votre liste de commande est vide !</td>";
+                          
+                      echo"</tr>";
+                      echo "<tr><td colspan='3'></td></tr>";
+                    }
+                ?>
+                
+            </tr>
+          </table>
+        </div>
       </article>
 
 

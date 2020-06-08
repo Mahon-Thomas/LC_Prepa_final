@@ -8,7 +8,9 @@ $tel = $_SESSION['user'][0][5];
 $adresse = $_SESSION['user'][0][6];
 $email = $_SESSION['user'][0][7];
 
-$numfact = date('d').date("H").$_SESSION['user'][0][0].count($_SESSION['panierprod']);
+$numfact = $tblorder[0][1];
+
+$_SESSION['num_fact'] = $numfact;
 ?>
 
 <section id="pageContent">
@@ -178,10 +180,13 @@ $numfact = date('d').date("H").$_SESSION['user'][0][0].count($_SESSION['panierpr
                 </tbody>
 
                 <tr>
-                <td></td>
-                
-                
-                <td colspan="6" class="text-right "><a href="index.php?action=pdf" class="btn btn-danger">Convertir en pdf</a></td>
+                    <td></td>
+                    
+                    
+                    <td colspan="6" class="text-right ">
+                    <a href="index.php?action=endorder" class="btn btn-primary">Retour à l'accueil</a>
+                    <a href="index.php?action=pdf" class="btn btn-danger">Convertir en pdf</a>
+                    </td>
                 </tr>
             </table>
         </div>
