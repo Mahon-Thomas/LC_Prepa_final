@@ -100,8 +100,11 @@ function panier($prod){
         if(!empty($_SESSION["panierprod"])) {
           if(in_array($prodResultat[0]["num_prod"],array_keys($_SESSION["panierprod"]))) {
             foreach($_SESSION["panierprod"] as $k => $v) {
+                
                 if($prodResultat[0]["num_prod"] == $k) {
+
                   if(empty($_SESSION["panierprod"][$k]["qte"])) {
+
                     $_SESSION["panierprod"][$k]["qte"] = 0;
                   }
                   $_SESSION["panierprod"][$k]["qte"] += $_POST["qte"];

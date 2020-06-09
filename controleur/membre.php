@@ -9,6 +9,7 @@ class Membre
         $this->ds = new DB();
     }
 
+    /*
     function getMemberById($idMembre)
     {
         $strSQL = "select * FROM admin WHERE id = ?";
@@ -16,7 +17,7 @@ class Membre
         $membreResultat = $this->ds->Requete($strSQL, $paramTab);
         return $membreResultat;
     }
-
+    */
     public function verifLogin($username, $password) {
         $passwordHash = sha1($password);
         $strSQL = "select * FROM admin WHERE login = ? AND mdp = ?";

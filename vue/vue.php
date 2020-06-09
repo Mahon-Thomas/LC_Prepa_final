@@ -15,19 +15,19 @@
 
 <div class="slideshow-container">
 
-<div class="mySlides fade">
+<div class="mySlides ">
   <div class="numbertext">1 / 3</div>
   <img class="slideimg" src="./img/1.jpg" style="width:100%">
   <div class="text"></div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides ">
   <div class="numbertext">2 / 3</div>
   <img class="slideimg" src="./img/2.jpg" style="width:100%">
   <div class="text"></div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides ">
   <div class="numbertext">3 / 3</div>
   <img class="slideimg" src="./img/3.jpg" style="width:100%">
   <div class="text"></div>

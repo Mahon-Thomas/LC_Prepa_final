@@ -118,7 +118,7 @@
          
         } 
          if ($_REQUEST['action'] == 'Inscrire') {
-          
+        
           $employe->setAdd($_POST);
          
         } 
