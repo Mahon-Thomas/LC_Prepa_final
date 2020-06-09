@@ -3,12 +3,15 @@ require_once("./modele/modele.php");
 class Forum extends DB{
 
     function Commentaire($tblcomment){
-  
-      $strSQL = "INSERT INTO forum (pseudo, sujet, comment) VALUES (?, ?,?)";
+      $date = date("Y-m-d H:i:s");
+      
+      $strSQL = "INSERT INTO forum (pseudo, sujet, comment, date_publi) VALUES (?, ?, ?, ?)";
       $tabValeur = array(
         $_SESSION['user'][0][3],
         $tblcomment['sujet'],
-        $tblcomment['com']
+        $tblcomment['com'],
+        $date
+
       );
       $ins = $this->Requete($strSQL, $tabValeur);
       return $ins;
@@ -21,6 +24,16 @@ class Forum extends DB{
       $tabValeur = array("*");
       $forum = $this->Requete($strSQL, $tabValeur);
       return $forum;
+    }
+
+    function allComment($session){
+
+      $strSQL = "SELECT * FROM forum where pseudo = '".$session."';";
+      
+      $tabValeur = array("*");
+      $result = $this->Requete($strSQL, $tabValeur);
+     
+      return $result;
     }
   
     function setSup($id){

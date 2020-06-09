@@ -169,6 +169,20 @@
           include "./vue/vuePanier.php";
         }
 
+        if ($_REQUEST['action'] == 'mdpoublie'){
+          include "./vue/vueMdpoublie.php";
+        }
+
+        if ($_REQUEST['action'] == 'Changer'){
+          if($_POST['mdp'] == $_POST['cmdp']){
+          $employe->Mdp($_POST);
+          include "./vue/vueLogin.php";
+          }else{
+            $_SESSION['erreur'] = "les mots de passes ne se correspondent pas ou l'identifiant est incorrect pas !";
+            include "./vue/vueMdpoublie.php";
+          }
+          
+        }
 
         if ($_GET['action'] == 'formLog') {
           
@@ -194,7 +208,8 @@
 
             $tblcomment = $comment->Commentaire($_POST);
             $tblcomment = $comment->getcomments();
-          include "./vue/vueForum.php";
+
+            include "./vue/vueForum.php";
         }
         else{
       
@@ -206,10 +221,11 @@
     }
 
 
-  if ($_GET['action'] == 'profil'){
+  if ($_REQUEST['action'] == 'profil'){
     if (!empty($_SESSION['user'])){
       
       $tblorder = $order->allOrder($_SESSION['user'][0][0]);
+      $tblcomment = $comment->allComment($_SESSION['user'][0][3]);
   
       include "./vue/vueProfil.php";
 

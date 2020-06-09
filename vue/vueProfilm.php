@@ -4,11 +4,12 @@
       <article class="ar_prof">
 
       <div class="container-profil">
-        <center>
+       
        <h1>Profil</h1>
         <br>
 
         <img src="./img/avatar1.png" alt="avatar">
+        
         <div class="formProfil">
             
               
@@ -21,13 +22,14 @@
               <li> Identifiant : <input readonly name='id' type="text" value="<?php echo $_SESSION['user'][0][3] ?>"> </li>
               <li> Date de naissance : <input name='date' type="text" value="<?php echo date($_SESSION['user'][0][4]) ?>"> </li>
               <li> Téléphone : <input name='tel' type="text" value="<?php  echo $_SESSION['user'][0][5] ?>"> </li>
- 
-              <input type='submit' name='action' value='Modifier' >
+              <div class="mod">
+                <input type='submit' name='action' value='Modifier' >
+              </div>
           </form>
           </ul>
           
         </div>
-  </center>
+  
       </div>
       </article>
 

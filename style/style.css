@@ -502,7 +502,7 @@ label {
     font-weight: lighter;
   }
   
-  input, textarea{
+  input, textarea, select{
     padding: 10px 10px;
     margin: 5px;
     border-radius: 5px;
@@ -697,6 +697,12 @@ label {
   text-transform: uppercase;
 }
 
+.mod {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
 #qte{
 
   width: 60px;
@@ -757,7 +763,7 @@ th, td  {
 }
 
 .intro {
-
+  font-size: 21px;
   text-align: justify;
   margin: auto;
   width: 75%;
@@ -860,10 +866,24 @@ img {vertical-align: middle;}
   to {opacity: 1}
 }
 
-.video {
+.form-comment {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+.form-comment h2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
+.video {
   width: 850px;
 }
+
+
 
 
 /************************* Page Commande | vueOrder.php *******************/

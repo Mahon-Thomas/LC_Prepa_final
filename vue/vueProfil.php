@@ -67,5 +67,49 @@
         </div>
       </article>
 
+      <article>
+        <div class="container-order">
+          <h1> Mes poste(s) sur le forum </h1>
+
+          <table class="table">
+
+            <tr class="thead-dark ">
+              <th>Pseudo</th>
+              <th>Sujet</th>
+              <th>Commantaire</th>
+              <th>Date de publication</th>
+            </tr>
+
+            <tr>
+                <?php
+
+                    if(!empty($tblcomment)){
+                      
+                      
+                      foreach ($tblcomment as $comment) {
+                        echo"<tr>";
+                          echo  "<td>".$comment['pseudo']."</td>";
+                          echo  "<td>".$comment['sujet']."</td>";
+                          echo  "<td>".$comment['comment']."</td>";
+                          echo  "<td>".$comment['date_publi']."</td>";
+                        echo"</tr>";
+                        
+                      }
+                      
+                    }else{
+
+                      echo"<tr>";
+                          echo  "<td colspan='3' class='text-center p-5'> Vous n'avez pas encore de postes !</td>";
+                          
+                      echo"</tr>";
+                      echo "<tr><td colspan='3'></td></tr>";
+                    }
+                ?>
+                
+            </tr>
+          </table>
+        </div>
+      </article>
+
 
 </section>

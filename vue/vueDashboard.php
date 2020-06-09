@@ -49,10 +49,11 @@ if (!empty($_SESSION['userId']) ) {
     <div class="table-responsive p-3">
     <table class="table table-sm">
      <tr>
-        <th coldspan="1">#</th>
-        <th ><h4 class="tbl_head_txt">Auteur </h4></th>
-        <th ><h4 class="tbl_head_txt"> Sujet </h4></th>
-        <th coldspan='2'><h4 class="tbl_head_txt">Commentaire </h4></th>
+        
+        <th  class="tbl_head_txt">Auteur </th>
+        <th  class="tbl_head_txt"> Sujet </th>
+        <th  class="tbl_head_txt">Commentaire </th>
+        <th class="tbl_head_txt">Date de publication</th>
         <th></th>
 
       </tr>
@@ -72,6 +73,7 @@ if (!empty($_SESSION['userId']) ) {
                 ."<td>".$avis['pseudo'] ."</td>" 
                 ."<td>".$avis['sujet'] ."</td>"  
                 ."<td coldspan='2'>".$avis['comment'] ."</td>"
+                ."<td>".$avis['date_publi']."</td>"
                 ."<td>". "<input class='btn btn-danger' type='submit' name='action' value='X'></td></tr>";
             echo "</form>";
           }

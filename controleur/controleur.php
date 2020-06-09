@@ -56,6 +56,19 @@ class Employes extends DB {
 
   }
 
+  function Mdp($tblmdp){
+    $strSQL = "UPDATE utilisateur SET mdp = :mdp WHERE login = :login;";
+
+    $tabValeur = array(
+      'login'  => $tblmdp['login'], 
+      'mdp'   => sha1($tblmdp['mdp'])
+    );
+   
+    $mdp = $this->Requete($strSQL, $tabValeur);
+    
+    return $mdp;
+  }
+
   function setUpdateuti($tblemp){
 
     $strSQL = "UPDATE utilisateur SET prenom = :pnom, nom = :nom, date_nais = :date, email = :mail WHERE num = :ide;";

@@ -22,6 +22,8 @@
               
             </div> 
 
+            <label><a href="index.php?action=mdpoublie" class="condition text-reset">Mot de passe oublié ?</a></label>
+
             <div class='bouton'>
                 <input type='submit' name='action' value='Se connecter' >
                 
