@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 08 Juin 2020 à 13:25
+-- Généré le :  Mer 10 Juin 2020 à 17:54
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -50,24 +50,19 @@ CREATE TABLE `commande` (
   `num` int(11) NOT NULL,
   `num_fact` varchar(250) NOT NULL,
   `num_client` int(11) NOT NULL,
-  `date_commande` varchar(250) NOT NULL,
-  `montantcommande` varchar(250) DEFAULT NULL
+  `date_commande` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `commande`
 --
 
-INSERT INTO `commande` (`num`, `num_fact`, `num_client`, `date_commande`, `montantcommande`) VALUES
-(1, '20061112321', 32, ' 8/06/2020', NULL),
-(2, '20061121321', 32, ' 8/06/2020', NULL),
-(3, '20061123323', 32, ' 8/06/2020', NULL),
-(4, '20061133321', 32, ' 8/06/2020', NULL),
-(5, '20061239344', 34, ' 8/06/2020', NULL),
-(6, '20061243344', 34, ' 8/06/2020', NULL),
-(7, '20061247344', 34, ' 8/06/2020', NULL),
-(8, '20060107341', 34, ' 8/06/2020', NULL),
-(9, '20060122355', 35, ' 8/06/2020', NULL);
+INSERT INTO `commande` (`num`, `num_fact`, `num_client`, `date_commande`) VALUES
+(1, '2006120522', 2, ' 9/06/2020'),
+(2, '2006121022', 2, ' 9/06/2020'),
+(3, '2006122415', 1, ' 9/06/2020'),
+(4, '2006100214', 1, '10/06/2020'),
+(5, '2006053311', 1, '10/06/2020');
 
 -- --------------------------------------------------------
 
@@ -78,18 +73,18 @@ INSERT INTO `commande` (`num`, `num_fact`, `num_client`, `date_commande`, `monta
 CREATE TABLE `forum` (
   `num` int(11) NOT NULL,
   `pseudo` varchar(50) NOT NULL,
-  `sujet` varchar(20) NOT NULL,
-  `comment` text NOT NULL
+  `sujet` varchar(50) NOT NULL,
+  `comment` text NOT NULL,
+  `date_publi` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `forum`
 --
 
-INSERT INTO `forum` (`num`, `pseudo`, `sujet`, `comment`) VALUES
-(4, 'Thomas', 'evolution clio1', 'Pas mal l\'évolution ! j\'adore\r\n          '),
-(8, 'Erickson.g', '206 rouge²', 'en vrai 2 vrai\r\n\r\n          '),
-(10, 'Wilsonbnc', 'evolution clio1', 'aaaaah ley moche\r\n          ');
+INSERT INTO `forum` (`num`, `pseudo`, `sujet`, `comment`, `date_publi`) VALUES
+(8, 'Wilson974', 'voiture tuning 2', 'Waaaah belle voiture ', '2020-06-10 09:58:08'),
+(9, 'Bobeponge', 'Evolution Clio 1 Tuning 2015-2018', 'jolie jolie', '2020-06-10 14:21:43');
 
 -- --------------------------------------------------------
 
@@ -102,7 +97,7 @@ CREATE TABLE `produit` (
   `nom_prod` varchar(50) COLLATE latin1_general_ci NOT NULL,
   `type` varchar(50) COLLATE latin1_general_ci NOT NULL,
   `prix_prod` float NOT NULL,
-  `desc_prod` text COLLATE latin1_general_ci NOT NULL,
+  `desc_prod` text COLLATE latin1_general_ci,
   `img_prod` varchar(255) COLLATE latin1_general_ci DEFAULT NULL,
   `idprod` varchar(250) COLLATE latin1_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
@@ -121,11 +116,10 @@ INSERT INTO `produit` (`num_prod`, `nom_prod`, `type`, `prix_prod`, `desc_prod`,
 (7, 'Volant Sparco P222', 'Volant Tulipé', 115, 'Volant Sparco P222 plat à 3 branches.', './img/volant-sparco-222.jpg', 'volantsparp22'),
 (8, 'Kit 3 Pédales OMP Spécial BMW / Porsche Alu Pédale', 'pedale', 19.8, 'Jeu de 3 pédales en fonderie d’aluminium avec pédale accélérateur longue. Jeu livré avec visserie en acier. Dimensions:- frein 60x70 mm- accélérateur 60x210 mm', './img/pedale-omp-bmw-porshe.jpg', 'pedaleompbm'),
 (9, 'Kit 3 Pédales Bratex Noir / Argent avec Visserie', 'pedale', 19.99, 'Kit de 3 pédales Bratex en aluminium anodisé noir. Dimensions frein / embrayage: 60x70mm', './img/kit-3-pedales-bratex-noir-argent-avec-visserie.jpg', 'pedalebratexnoir'),
-(10, 'jante rotor 15"', 'Jante', 500, 'Jante 15" en fibre carbone', './img/jante-rotor.jpg', 'janterotor15'),
-(11, 'dfsdf', 'Ligne clio rs', 15000, 'dsfdsfjksdfdsklkfldflsd\r\n          ', './img/lignedsfsf', 'lgncliors'),
-(12, 'cica', 'ligne', 25000, 'dfjsdf,kndf\r\n          ', './img/lignecica', 'cica2'),
-(13, 'Ligne rs6', 'ligne', 70000, 'good    ', './img/ligners6', 'ligners6'),
-(14, 'Stickers mickey', 'stickers', 2, '140 x 50 x 2 cm', './img/stickmick', 'stickmick');
+(17, 'frein main vert victory obp', 'frein', 166.47, NULL, './img/fam-vert-victory.jpg', 'freinObpVict'),
+(18, 'frein main v2 hyd', 'frein', 372.89, NULL, './img/frein-main-v2-hyd.jpg', 'freinv2Obp'),
+(19, 'frein main v3 pro drift', 'frein', 250.89, NULL, './img/frein-main-v3prodrift.jpg', 'freinV3drift'),
+(20, 'kit 3 pédales Sparco Carbone', 'pedale', 150, NULL, './img/kit-3-pedales-sparco-carbone.jpg', 'kitpedaleSparco');
 
 -- --------------------------------------------------------
 
@@ -150,14 +144,9 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`num`, `nom`, `prenom`, `login`, `date_nais`, `tel`, `adresse`, `email`, `mdp`) VALUES
-(3, 'THOMAS', 'BALOURD', '', '2019-10-01', '069245879', '0', 'GROS.GAUTHIER@GMAIL.COM', 'da39a3ee5e6b4b0d3255bfef95601890afd80709'),
-(28, 'Thomas', 'MAHON', 'Thomas974', '2020-02-11', '0692159835', 'sqdsqd', 'tomfab974@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
-(29, 'Gravier', 'Erickson', 'Erickson.g', '2020-02-13', '0662558745', '', 'erickson.g@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b'),
-(31, 'Garnier', 'Wilson', 'Wilsonbnc', '2020-04-27', '0693458625', '0', 'wilsonbnc974@mail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
-(32, 'Kemma', 'Kevin', 'Kevinpapa974', '2020-04-30', '06921111111', '41 rue Desboisviliers', 'kevinpapapalissade@gmail.com', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2'),
-(33, 'Mahon', 'Maxime', 'M.Maxime', '2020-04-27', '0692157489', '0', 'maxime.m@gmail.com', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2'),
-(34, 'Coupama', 'Laurent', 'laurent974', '2020-05-27', '0692154786', NULL, 'laurent974@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
-(35, 'Gravier', 'Erickson', 'Erickson974', '2000-02-24', '0692415689', '56 rue etanne', 'erickson.g@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+(1, 'Garnier', 'Wilson', 'Wilson974', '2000-06-16', '0692453526', '54 rue jeanjean', 'wilsonbnc974@mail.com', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2'),
+(2, 'Adras', 'Romain', 'Romain974', '1999-06-03', '0692458698', '45 rue pasteur', 'romain@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(3, 'Eponge', 'Bob', 'Bobeponge', '2000-02-11', '0692158694', '46 rue jsp', 'bobeponge@gmail.com', '51eac6b471a284d3341d8c0c63d0f1a286262a18');
 
 --
 -- Déclencheurs `utilisateur`
@@ -197,19 +186,10 @@ CREATE TABLE `utilisateur_histo` (
 --
 
 INSERT INTO `utilisateur_histo` (`num`, `nom`, `prenom`, `login`, `date_nais`, `tel`, `adresse`, `email`, `mdp`, `Datehisto`, `User`, `evenement`) VALUES
-(20, 'Pauline', 'ouais', '', '2017-09-17', '0692478965', '41 rue desboisvilliers', 'aure.pauline@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2020-05-22 17:11:57', 'root@localhost', 'UPDATE'),
-(20, 'Pauline', 'poitier', '', '2017-09-17', '0692478965', '41 rue desboisvilliers', 'aure.pauline@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2020-05-22 17:12:30', 'root@localhost', 'UPDATE'),
-(20, 'Pauline', 'Chirois', '', '2017-09-17', '0692478965', '41 rue desboisvilliers', 'aure.pauline@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2020-05-22 17:16:22', 'root@localhost', 'DELETE'),
-(29, 'Gravier', 'Erickson', 'Erickson.g', '2020-02-13', '0662558745', '', 'erickson.g@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2020-05-22 17:31:58', 'root@localhost', 'UPDATE'),
-(18, 'Nicole', 'Pontier', '', '2014-06-28', '06 92 45 68 45', '0', 'R.tangue@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2020-05-22 17:32:10', 'root@localhost', 'UPDATE'),
-(32, 'Kemma', 'Kevin', 'Kevinpapa974', '2020-04-30', '0692156358', '0', 'kevinpapapalissade@gmail.com', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2', '2020-05-22 19:09:31', 'root@localhost', 'UPDATE'),
-(32, 'Kemma', 'Kevin', 'Kevinpapa974', '2020-04-30', '06921111111', '0', 'kevinpapapalissade@gmail.com', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2', '2020-05-23 15:30:51', 'root@localhost', 'UPDATE'),
-(30, 'GARNIER', 'Wilson', 'Wilson.g', '1998-12-14', '0692324565', '0', 'Wilsong@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2020-06-05 13:30:41', 'root@localhost', 'DELETE'),
-(34, 'test', 'test', 'test1', '2020-04-29', '0692159835', NULL, 'test@gmail.com', '51eac6b471a284d3341d8c0c63d0f1a286262a18', '2020-06-05 14:08:11', 'root@localhost', 'DELETE'),
-(18, 'Nicolas', 'Taillame', '', '2014-06-28', '06 92 45 68 45', '0', 'R.tangue@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2020-06-07 14:04:03', 'root@localhost', 'DELETE'),
-(15, 'romain', 'adras', '', '2005-09-03', '06 92 45 68 45', '0', 'thomas@gmail.com', '2bebd02ee6a5c5bdc14cd0b7dad3065ca083b04c', '2020-06-07 14:50:19', 'root@localhost', 'DELETE'),
-(32, 'Kemma', 'Kevin', 'Kevinpapa974', '2020-04-30', '06921111111', '0', 'kevinpapapalissade@gmail.com', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2', '2020-06-07 18:35:46', 'root@localhost', 'UPDATE'),
-(35, 'test', 'test', 'test12', '2020-05-31', '0692158636', 'tetdtf', 'test@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2020-06-07 23:58:03', 'root@localhost', 'DELETE');
+(1, 'Garnier', 'Wilson', 'Wilson974', '2000-06-16', '0692453526', '54 rue jeanjean', 'wilsonbnc974@mail.com', 'b2ffdbeb87e8e6331d350b482b328d309bc5a321', '2020-06-09 13:35:32', 'root@localhost', 'UPDATE'),
+(1, 'Garnier', 'Wilson', 'Wilson974', '2000-06-16', '0692453526', '54 rue jeanjean', 'wilsonbnc974@mail.com', '51eac6b471a284d3341d8c0c63d0f1a286262a18', '2020-06-10 13:57:25', 'root@localhost', 'UPDATE'),
+(1, 'Garnier', 'Wilson', 'Wilson974', '2000-06-16', '0692453526', '54 rue jeanjean', 'wilsonbnc974@mail.com', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2', '2020-06-10 13:59:16', 'root@localhost', 'UPDATE'),
+(3, 'Eponge', 'Bob', 'Bobeponge', '2000-02-11', '0692158694', '46 rue jsp', 'bobeponge@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2020-06-10 18:21:06', 'root@localhost', 'UPDATE');
 
 --
 -- Index pour les tables exportées
@@ -268,22 +248,22 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT pour la table `commande`
 --
 ALTER TABLE `commande`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `num_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `num_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
