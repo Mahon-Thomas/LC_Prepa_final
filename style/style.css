@@ -598,10 +598,13 @@ label {
   
   .bloc{
     width: 250px;
-    
-   
   }
-
+  .bloc img {
+    padding-bottom: 5px;
+  }
+  .bloc p {
+    padding-top: 5px;
+  }
   .formproduit {
 
 
@@ -682,7 +685,6 @@ label {
 }
 
 .container-profil img {
-
   width: 150px;
   height: 150px;
   max-width: 100%;
@@ -695,6 +697,44 @@ label {
   font-weight: bold;
   font-size: 30px;
   text-transform: uppercase;
+}
+
+.div-choose {
+  padding-top: 30px;
+  text-transform: uppercase;
+}
+.div-choose p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.pseudo {
+  display: flex;
+}
+.div-choose h1 {
+  font-weight: bold;
+  font-size: 20px;
+}
+.div-choose a{
+  font-size: 18px;
+  padding: 10px !important;
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+  letter-spacing: 3px;
+  text-decoration: none;
+  background-color: #c0392b;
+  border-radius: 10px;
+  color: white;
+}
+
+.active {
+  border-radius: 10px !important;
+  background-color: green !important;
+  padding: 5px !important;
+  color: white !important;
+  
 }
 
 .mod {

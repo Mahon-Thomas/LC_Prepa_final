@@ -68,8 +68,9 @@
       }
 
       foreach ($_SESSION["panierprod"] as $prod) {
-
+        
           $prod_prix = $prod["qte"] * $prod["prix"];
+          
           ?>
 
                 <td colspan="2">

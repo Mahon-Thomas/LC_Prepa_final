@@ -50,7 +50,7 @@ if (!empty($_SESSION['userId']) ) {
     <table class="table table-sm">
      <tr>
         
-        <th  class="tbl_head_txt">Auteur </th>
+        <th  coldspan='2' class="tbl_head_txt">Auteur </th>
         <th  class="tbl_head_txt"> Sujet </th>
         <th  class="tbl_head_txt">Commentaire </th>
         <th class="tbl_head_txt">Date de publication</th>
@@ -69,10 +69,10 @@ if (!empty($_SESSION['userId']) ) {
             echo "<form action='index.php?action=Admin' method='POST'>";
             echo 
             "<tr>" 
-                ."<td>"."<input readonly type='text' name='ide' id='ide' value=".$avis['num']."></td>"
-                ."<td>".$avis['pseudo'] ."</td>" 
+                ."<td class='pseudo'>"."<input readonly type='text' name='ide' id='ide' value=".$avis['num'].">
+                ".$avis['pseudo'] ."</td>" 
                 ."<td>".$avis['sujet'] ."</td>"  
-                ."<td coldspan='2'>".$avis['comment'] ."</td>"
+                ."<td >".$avis['comment'] ."</td>"
                 ."<td>".$avis['date_publi']."</td>"
                 ."<td>". "<input class='btn btn-danger' type='submit' name='action' value='X'></td></tr>";
             echo "</form>";
@@ -98,7 +98,10 @@ if (!empty($_SESSION['userId']) ) {
           <input type="text" name="nom_prod" id="nom_prod" ><br><br>
           
           <label for="prenom">type</label><br>
-          <input type="text" name="type" id="prenom" > <br><br>
+          <input type="text" name="type" id="type" > <br><br>
+
+          <label for="idprod">id produit</label><br>
+          <input type="text" name="idprod" id="idprod" > <br><br>
 
           <label for="prix">Prix</label><br>
           <input type="numeric" name="prix" id="prix"><br><br>

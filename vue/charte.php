@@ -3,7 +3,7 @@
 <article class="formtxt">
     
 
-    <h3>Charte d'utilisation</h3>
+    <h3>Condition d'utilisation</h3>
 
 <h4>Droits d’utilisation sur les informations et les contenus du site</h4>
 

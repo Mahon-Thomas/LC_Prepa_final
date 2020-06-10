@@ -162,6 +162,7 @@
 
         if ($_REQUEST['action'] == 'Inserer'){
           $prod->setProd($_POST);
+          header("Location: index.php?action=formLog");
         }
 
         if ($_GET['action'] == 'panier') {
@@ -196,7 +197,7 @@
           }
           else {
 
-            include "./vue/vueLogin.php";         
+            header("Location: index.php?action=Accueil");       
 
           }
 
@@ -209,7 +210,7 @@
             $tblcomment = $comment->Commentaire($_POST);
             $tblcomment = $comment->getcomments();
 
-            include "./vue/vueForum.php";
+            header("Location: index.php?action=forum");
         }
         else{
       
@@ -292,6 +293,16 @@
             include "./vue/vueProfilm.php";
             
           }
+        }
+
+        if ($_REQUEST['action'] == 'Connexion'){
+
+          include "./vue/vueLogin.php";
+        }
+
+        if ($_REQUEST['action'] == 'formAdmin'){
+
+          include "./vue/vueLoginAdmin.php";
         }
 
         if ($_GET['action'] == 'Login') {

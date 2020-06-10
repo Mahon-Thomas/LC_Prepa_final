@@ -28,7 +28,7 @@
     
         <table class="table table-sm">
         <tr>
-        <th> Auteur </th>
+        <th> Pseudo </th>
         <th> sujet </th>
         <th> Commentaire </th>
         <th> Date publication </th>

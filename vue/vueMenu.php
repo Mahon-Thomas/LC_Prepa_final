@@ -15,7 +15,9 @@ if (!empty($_SESSION['userId']) ) {
 if (empty($_SESSION["panierprod"])){
   $qte = 0;
 }else {
+    
   $qte = count($_SESSION["panierprod"]);
+
 }
 
 
@@ -84,7 +86,7 @@ if (empty($_SESSION["panierprod"])){
                     <span></span>
                     <span></span>
                     Inscription</a></li>";
-                    echo "<li><a class='effet' href='index.php?action=formLog'>
+                    echo "<li><a class='effet' href='index.php?action=Connexion'>
                     <span></span>
                     <span></span>
                     <span></span>

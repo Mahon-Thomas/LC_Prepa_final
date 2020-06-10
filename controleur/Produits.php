@@ -126,13 +126,14 @@ function panier($prod){
 
 function setProd($tblprod){
   
-  $strSQL = "INSERT INTO produit (nom_prod, type, prix_prod, desc_prod, img_prod) VALUES (?, ?,?, ?, ?)";
+  $strSQL = "INSERT INTO produit (nom_prod, type, prix_prod, desc_prod, img_prod, idprod) VALUES (?, ?,?, ?, ?, ?)";
   $tabValeur = array(
     $tblprod['nom_prod'],
     $tblprod['type'],
     $tblprod['prix'],
     $tblprod['desc'],
-    "<img src='./img/".$tblprod['img']."' width='150px'>"
+    $tblprod['img'],
+    $tblprod['idprod']
   );
   $ins = $this->Requete($strSQL, $tabValeur);
   return $ins;
